@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// Class là một thực thể mô tả các thuộc tính và hành vi của một đối tượng
+// Class không chạy được, chỉ tạo ra các đối tượng
 class Student {
 public: 
     string name;
@@ -10,7 +11,8 @@ public:
 };
 
 int main() {
-
+    // Khai báo biến s1 là một đối tượng của class Student, người ta gọi là object
+    // Object là một biến cụ thể của class
      Student s1;
      cout << "Name: ";
      getline(cin, s1.name); cout << endl;
