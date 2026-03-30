@@ -1,3 +1,8 @@
+//Mã số sinh viên: 25521438
+//Họ và tên sinh viên: Phạm Sơn Phúc
+//Ngày sinh: 08/02/2007
+//Lớp: IT002.Q27
+
 /*Định nghĩa lớp cDSPhanSo (danh sách phân số) để lưu trữ và xử lý các thao tác
 trên mảng các phân số. Viết chương trình cho phép người dùng nhập vào danh
 sách các phân số

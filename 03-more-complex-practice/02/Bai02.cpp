@@ -1,3 +1,8 @@
+//Mã số sinh viên: 25521438
+//Họ và tên sinh viên: Phạm Sơn Phúc
+//Ngày sinh: 08/02/2007
+//Lớp: IT002.Q27
+
 /*Định nghĩa lớp Mảng một chiều (cArray) để lưu trữ danh sách
 các số nguyên và hỗ trợ xử lý các thao tác cơ bản trên mảng 
 một chiều:
