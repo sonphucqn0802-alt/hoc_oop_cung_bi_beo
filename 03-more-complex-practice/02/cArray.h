@@ -12,6 +12,13 @@ public:
         arr = nullptr;
         n = 0;
     }
+    cArray(const cArray& other) {
+        n = other.n;
+        arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = other.arr[i];
+        }
+    }
     ~cArray() {
         delete[] arr;
     }
