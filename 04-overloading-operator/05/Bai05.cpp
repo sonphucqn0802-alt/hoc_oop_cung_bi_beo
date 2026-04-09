@@ -7,7 +7,6 @@
 phần và phép toán cần thiết.*/
 
 #include "cDaThuc.h"
-#include <iostream>
 #include <iomanip>
 
 using namespace std;

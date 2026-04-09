@@ -10,10 +10,6 @@ hàm thành phần và các phép toán cần thiết.
 Viết hàm tính tích của một ma trận và một vector. Tích của hai ma trận.*/
 
 #include "cMatrix.h"
-#include <iostream>
-#include <iomanip>
-#include <stdexcept>
-
 using namespace std;
 
 int main() {

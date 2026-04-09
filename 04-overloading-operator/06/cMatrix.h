@@ -1,22 +1,21 @@
 #pragma once
 
 #include "cVector.h"
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <stdexcept>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 class cMatrix {
 private:
     int soDong;
     int soCot;
-    std::vector<std::vector<double>> phanTu;
+    vector<vector<double>> phanTu;
 
 public:
     cMatrix() : soDong(0), soCot(0) {}
 
     cMatrix(int soDong, int soCot)
-        : soDong(soDong), soCot(soCot), phanTu(soDong, std::vector<double>(soCot, 0)) {}
+        : soDong(soDong), soCot(soCot), phanTu(soDong, vector<double>(soCot, 0)) {}
 
     int laySoDong() const {
         return soDong;
@@ -36,7 +35,8 @@ public:
 
     cMatrix operator+(const cMatrix& maTranKhac) const {
         if (soDong != maTranKhac.soDong || soCot != maTranKhac.soCot) {
-            throw std::invalid_argument("Hai ma tran khong cung kich thuoc");
+           cout << "Hai ma tran khong cung kich thuoc" << endl;
+           return cMatrix();
         }
 
         cMatrix ketQua(soDong, soCot);
@@ -50,7 +50,8 @@ public:
 
     cMatrix operator-(const cMatrix& maTranKhac) const {
         if (soDong != maTranKhac.soDong || soCot != maTranKhac.soCot) {
-            throw std::invalid_argument("Hai ma tran khong cung kich thuoc");
+           cout << "Hai ma tran khong cung kich thuoc" << endl;
+           return cMatrix();
         }
 
         cMatrix ketQua(soDong, soCot);
@@ -64,7 +65,8 @@ public:
 
     cVector operator*(const cVector& vector) const {
         if (soCot != vector.laySoChieu()) {
-            throw std::invalid_argument("So cot cua ma tran phai bang so chieu cua vector");
+           cout << "So cot cua ma tran phai bang so chieu cua vector" << endl;
+           return cVector();
         }
 
         cVector ketQua(soDong);
@@ -80,7 +82,8 @@ public:
 
     cMatrix operator*(const cMatrix& maTranKhac) const {
         if (soCot != maTranKhac.soDong) {
-            throw std::invalid_argument("So cot cua ma tran thu nhat phai bang so dong cua ma tran thu hai");
+            cout << "So cot cua ma tran thu nhat phai bang so dong cua ma tran thu hai" << endl;
+            return cMatrix();
         }
 
         cMatrix ketQua(soDong, maTranKhac.soCot);
@@ -103,7 +106,7 @@ public:
 
         for (int i = 0; i < soDong; i++) {
             for (int j = 0; j < soCot; j++) {
-                if (std::fabs(phanTu[i][j] - maTranKhac.phanTu[i][j]) >= 1e-9) {
+                if (fabs(phanTu[i][j] - maTranKhac.phanTu[i][j]) >= 1e-9) {
                     return false;
                 }
             }
@@ -111,7 +114,7 @@ public:
         return true;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const cMatrix& maTran) {
+    friend ostream& operator<<(ostream& os, const cMatrix& maTran) {
         for (int i = 0; i < maTran.soDong; i++) {
             os << "[";
             for (int j = 0; j < maTran.soCot; j++) {
@@ -122,20 +125,15 @@ public:
             }
             os << "]";
             if (i + 1 < maTran.soDong) {
-                os << std::endl;
+                os << endl;
             }
         }
         return os;
     }
 
-    friend std::istream& operator>>(std::istream& is, cMatrix& maTran) {
+    friend istream& operator>>(istream& is, cMatrix& maTran) {
         is >> maTran.soDong >> maTran.soCot;
-        if (!is || maTran.soDong < 0 || maTran.soCot < 0) {
-            is.setstate(std::ios::failbit);
-            return is;
-        }
-
-        maTran.phanTu.assign(maTran.soDong, std::vector<double>(maTran.soCot, 0));
+        maTran.phanTu.assign(maTran.soDong, vector<double>(maTran.soCot, 0));
         for (int i = 0; i < maTran.soDong; i++) {
             for (int j = 0; j < maTran.soCot; j++) {
                 is >> maTran.phanTu[i][j];

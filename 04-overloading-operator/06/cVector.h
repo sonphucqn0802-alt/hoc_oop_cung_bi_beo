@@ -1,13 +1,12 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <cmath>
-#include <stdexcept>
+#include <bits/stdc++.h>
+
+using namespace std;
 
 class cVector {
 private:
-    std::vector<double> thanhPhan;
+    vector<double> thanhPhan;
 
 public:
     cVector() {}
@@ -28,7 +27,8 @@ public:
 
     cVector operator+(const cVector& vectorKhac) const {
         if (laySoChieu() != vectorKhac.laySoChieu()) {
-            throw std::invalid_argument("Hai vector khong cung so chieu");
+            cout << "Hai vector khong cung so chieu" << endl;
+            return cVector();
         }
 
         cVector ketQua(laySoChieu());
@@ -40,7 +40,8 @@ public:
 
     cVector operator-(const cVector& vectorKhac) const {
         if (laySoChieu() != vectorKhac.laySoChieu()) {
-            throw std::invalid_argument("Hai vector khong cung so chieu");
+            cout << "Hai vector khong cung so chieu" << endl;
+            return cVector();
         }
 
         cVector ketQua(laySoChieu());
@@ -56,15 +57,15 @@ public:
         }
 
         for (int i = 0; i < laySoChieu(); i++) {
-            if (std::fabs(thanhPhan[i] - vectorKhac.thanhPhan[i]) >= 1e-9) {
+            if (fabs(thanhPhan[i] - vectorKhac.thanhPhan[i]) >= 1e-9) {
                 return false;
             }
         }
         return true;
     }
 
-    friend std::ostream& operator<<(std::ostream& os, const cVector& vector) {
-        os << "(";
+    friend ostream& operator<<(ostream& os, const cVector& vector) {
+        os << "(";                  
         for (int i = 0; i < vector.laySoChieu(); i++) {
             os << vector.thanhPhan[i];
             if (i + 1 < vector.laySoChieu()) {
@@ -75,14 +76,9 @@ public:
         return os;
     }
 
-    friend std::istream& operator>>(std::istream& is, cVector& vector) {
+    friend istream& operator>>(istream& is, cVector& vector) {
         int soChieu;
         is >> soChieu;
-        if (!is || soChieu < 0) {
-            is.setstate(std::ios::failbit);
-            return is;
-        }
-
         vector.thanhPhan.assign(soChieu, 0);
         for (int i = 0; i < soChieu; i++) {
             is >> vector.thanhPhan[i];
