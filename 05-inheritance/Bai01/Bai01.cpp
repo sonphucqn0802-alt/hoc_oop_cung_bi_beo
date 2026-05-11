@@ -1,3 +1,8 @@
+//Mã số sinh viên: 25521438
+//Họ và tên sinh viên: Phạm Sơn Phúc
+//Ngày sinh: 08/02/2007
+//Lớp: IT002.Q27.1
+
 /*Công ty du lịch X có nhu cầu quản lý thông tin các chuyến xe. Hiện tại công ty
 có 2 loại chuyến xe:
 - Chuyến xe nội thành có các thông tin sau: Mã số chuyến, Họ tên tài xế, số

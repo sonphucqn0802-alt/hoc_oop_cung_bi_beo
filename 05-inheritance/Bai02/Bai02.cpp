@@ -1,3 +1,8 @@
+//Mã số sinh viên: 25521438
+//Họ và tên sinh viên: Phạm Sơn Phúc
+//Ngày sinh: 08/02/2007
+//Lớp: IT002.Q27.1
+
 /*
 Thư viện X có nhu cầu quản lý danh sách các loại sách. Thông tin về các loại
 sách gồm:
